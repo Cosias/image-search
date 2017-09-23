@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  p.des Example Usage
+  
+  ul#examples
+   li
+    code.blue localhost:3000/search/dog
+   li
+    code.blue localhost:3000/search/dog?offset=5
+   li
+    code.blue localhost:3000/recentsearches 
+  
