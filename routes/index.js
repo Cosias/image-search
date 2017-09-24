@@ -24,11 +24,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Image Search Abstraction Layer ' });
 });
 
-// router.get('/recentSearches', function(req,res){
-// 	searchHistory.find({},(err, data)=>
-// 		{res.json(data);});
-// });
-
 router.get('/recentSearches', function(req,res){
 	searchHistory.find({}).sort('-searchDate').limit(10).exec(function(err,data){
 		res.json(data);
@@ -37,35 +32,7 @@ router.get('/recentSearches', function(req,res){
 
 /* GET img search query*/
 router.get('/search*/:q', function(req,res){
-	// mongodb.connect(mLab,function(err,db){
-	// 	if(err){
-	// 		console.error("Failed to connect to server", err);
-	// 	}
-	// 	else{
-	// 		console.log("Connnected to server");
 
-	// 		var collection = db.collection("imgHistory");
-	// 		var params = req.params.q;
-	// 		var offset = req.query.offset;
-	
-	// 		var images = imgur.getImage(params, 1, offset, function(x){res.json(x)});
-	// 		console.log(images);
-
-	// 		var data = new searchHistory({
-	// 			searchVal,
-	// 			searchDate: new Date()
-	// 		});
-
-	// 		data.save(err=>{
-	// 			if(err){
-	// 				res.send('Error saving to database');
-	// 			}
-	// 		});
-
-	// 	}
-	// });
-
-	// var collection = db.collection("imgHistory");
 	var searchVal = req.params.q;
 	var offset = req.query.offset;
 	
