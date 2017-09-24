@@ -1,6 +1,5 @@
  # Image Search Api
----
-
+ 
 * User can get the image URLs, alt text and page urls for a set of images relating to a given search string.
 
 ```
@@ -17,3 +16,5 @@ https://img-api-search.herokuapp.com/search/dog?offset=5
 ```
 https://img-api-search.herokuapp.com/recentsearches
 ```
+### Live Site
+https://img-api-search.herokuapp.com/
