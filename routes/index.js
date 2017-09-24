@@ -1,20 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-// var mongoose = require('mongoose');
 var mongodb = require('mongodb').MongoClient;
-// var mLab = 'mongodb://localhost:27017/img-abstraction-layer';
-// var mLab = 'mongodb://<Cosias>:<CmySh0rts!>@ds149134.mlab.com:49134/img-abstraction-history'
+
 var imgur = require('../services/imgur');
 
 /*Needed for Heroku Deployment*/
-// var host = process.env['host'];
-// var name = process.env['name'];
-// var mLab = 'mongodb://' + host + '/' + name;
+var host = process.env['host'];
+var name = process.env['name'];
+var mLab = 'mongodb://' + host + '/' + name;
 
 /*Needed for Local Use*/
-var config = require('../config');
-var mLab = 'mongodb://' + config.db.host + '/'+ config.db.name;
+// var config = require('../config');
+// var mLab = 'mongodb://' + config.db.host + '/'+ config.db.name;
 
 var searchHistory = require('../models/searchHistory');
 var mongoose = require('mongoose');
