@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI || mLab);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Image Search Abstraction Layer ' });
+  res.render('index', { title: 'Image Search Abstraction Layer' });
 });
 
 router.get('/recentSearches', function(req,res){
